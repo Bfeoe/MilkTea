@@ -7,7 +7,7 @@ class Order:
     def __init__(self, orderBuilder):
         self.beverage = orderBuilder.bBeverage
 
-    def show(self):
+    def show(self):0n
         print("name:%s " % self.beverage.getName())
         print("heat:%s " % self.beverage.heat)
         print("cup:%s " % self.beverage.cup)
