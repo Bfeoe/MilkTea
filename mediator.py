@@ -1,6 +1,3 @@
-from abc import abstractmethod, ABCMeta
-
-
 class Colleague:
     mediator = None
 
