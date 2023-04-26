@@ -158,6 +158,7 @@ if __name__ == "__main__":
     order_builder.setCup("小杯")
     order.append(order_builder.build())
     order_builder.setBeverage(PeachSmoothie())
+    order.append(order_builder.build())
     waiter = WaiterSys()
     for orders in order:
         waiter.addOrder(orders)
