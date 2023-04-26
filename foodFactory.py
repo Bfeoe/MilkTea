@@ -1,7 +1,8 @@
 class foodFactory():
     type = ""
 
-    def createFood(self, foodClass):
+    @staticmethod
+    def createFood(foodClass):
         foodIns = foodClass()
         return foodIns
 
@@ -23,7 +24,7 @@ class teaFactory(foodFactory):
 
 class fruitTeaFactory(foodFactory):
     def __init__(self):
-        self.type = "FRUITTEA"
+        self.type = "FRUIT-TEA"
 
 
 class smoothieFactory(foodFactory):

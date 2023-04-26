@@ -2,15 +2,15 @@ from foodType import *
 
 
 class order:
-    beverage = ""
+    beverage = None
 
     def __init__(self, orderBuilder):
         self.beverage = orderBuilder.bBeverage
 
     def show(self):
-        print("Beverage:%s" % self.beverage.getName())
-        print("Heat:%s " % self.beverage.getHeat())
-        print("Cup:%s " % self.beverage.getCup())
+        print("Beverage:", self.beverage.getName())
+        print("Heat: ", self.beverage.getHeat())
+        print("Cup:", self.beverage.getCup())
 
 
 class OrderBuilder:
@@ -20,10 +20,10 @@ class OrderBuilder:
         self.bBeverage = xBeverage
 
     def addHeat(self, xHeat):
-        self.bBeverage.heat = xHeat
+        self.bBeverage.setHeat(xHeat)
 
     def addCup(self, xCup):
-        self.bBeverage.cup = xCup
+        self.bBeverage.setCup(xCup)
 
     def build(self):
         return order(self)
@@ -31,6 +31,8 @@ class OrderBuilder:
 
 if __name__ == "__main__":
     order_builder = OrderBuilder()
-    order_builder.addBeverage(MochaCoffee())
+    order_builder.addBeverage(GrapeCustard())
+    order_builder.addCup("大杯")
+    order_builder.addHeat("热")
     order_1 = order_builder.build()
     order_1.show()

@@ -15,13 +15,19 @@ class Beverage:
         return self.name
 
     def setHeat(self, heat):
-        self.heat = heat
+        if self.heat != '' and self.heat != heat:
+            print(f"这个产品只能做成 {self.heat}饮 !")
+        else:
+            self.heat = heat
 
     def getHeat(self):
         return self.heat
 
     def setCup(self, cup):
-        self.cup = cup
+        if self.cup != '' and self.cup != cup:
+            print(f"这个产品只有 {self.cup} ！")
+        else:
+            self.cup = cup
 
     def getCup(self):
         return self.cup
@@ -29,6 +35,7 @@ class Beverage:
 
 class Tea(Beverage):
     type = "TEA"
+    cup = '小杯'
 
 
 class BlackTea(Tea):
@@ -38,12 +45,14 @@ class BlackTea(Tea):
 
 
 class PuerTea(Tea):
+    heat = '热'
     material = ["Puer tea"]
     def __init__(self):
         self.name = "普洱茶"
 
 
 class TieGuanYin(Tea):
+    heat = '热'
     material = ["Tieguanyin"]
     def __init__(self):
         self.name = "铁观音"
@@ -63,6 +72,7 @@ class JasmineGreenTea(Tea):
 
 
 class LongJingTea(Tea):
+    heat = '热'
     material = ["Longjing tea"]
     def __init__(self):
         self.name = "龙井茶"
@@ -81,12 +91,14 @@ class LemonGrapefruitTea(Tea):
 
 
 class BiLuoChun(Tea):
+    heat = '热'
     material = ["Biluochun"]
     def __init__(self):
         self.name = "碧螺春"
 
 
 class IceOolong(Tea):
+    heat = '冷'
     material = ["ice oolong"]
     def __init__(self):
         self.name = "冰乌龙"
@@ -222,6 +234,7 @@ class PeachJuice(Juice):
 
 class FruitTea(Beverage):
     type = "FRUIT-TEA"
+    heat = '冷'
 
 
 class YangZhiGanLu(FruitTea):
@@ -231,6 +244,7 @@ class YangZhiGanLu(FruitTea):
 
 
 class MultiMangoYangZhiGanLu(FruitTea):
+    cup = '大杯'
     material = ["tea", "mango", "tea"]
     def __init__(self):
         self.name = "多芒杨枝甘露"
@@ -255,6 +269,7 @@ class LemonBlackTea(FruitTea):
 
 
 class ABucketOfFruitTea(FruitTea):
+    cup = '大杯'
     material = ["tea", "strawberry", "cherry", "peach"]
     def __init__(self):
         self.name = "一桶水果茶"
@@ -319,18 +334,21 @@ class ThickMilkLatte(Coffee):
 
 
 class StrawberryIceLatte(Coffee):
+    heat = '冷'
     material = ["coffee", "milk", "strawberry"]
     def __init__(self):
         self.name = "草莓冰拿铁"
 
 
 class SnowTopCoffee(Coffee):
+    heat = '冷'
     material = ["coffee", "milk", "cream"]
     def __init__(self):
         self.name = "雪顶咖啡"
 
 
 class IceCreamCoffee(Coffee):
+    heat = '冷'
     material = ["coffee", "milk", "icecream"]
     def __init__(self):
         self.name = "冰淇淋咖啡"
@@ -350,6 +368,8 @@ class MatchaCoffee(Coffee):
 
 class Smoothie(Beverage):
     type = "SMOOTHIE"
+    heat = '冷'
+    cup = '小杯'
 
 
 class StrawberryCustard(Smoothie):

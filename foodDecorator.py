@@ -1,13 +1,11 @@
+
 class drinkDecorator():
     def getName(self):
         pass
-
     def getPrice(self):
         pass
-
     def getCook(self):
         pass
-
     def delIngredient(self):
         pass
 
