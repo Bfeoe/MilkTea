@@ -8,7 +8,8 @@ class order:
         self.beverage = orderBuilder.bBeverage
 
     def show(self):
-        print("Beverage:", self.beverage.getName())
+        print("Order:")
+        print("name:", self.beverage.getName())
         print("Heat: ", self.beverage.getHeat())
         print("Cup:", self.beverage.getCup())
 
@@ -16,13 +17,13 @@ class order:
 class OrderBuilder:
     bBeverage = ""
 
-    def addBeverage(self, xBeverage):
+    def setBeverage(self, xBeverage):
         self.bBeverage = xBeverage
 
-    def addHeat(self, xHeat):
+    def setHeat(self, xHeat):
         self.bBeverage.setHeat(xHeat)
 
-    def addCup(self, xCup):
+    def setCup(self, xCup):
         self.bBeverage.setCup(xCup)
 
     def build(self):
@@ -31,8 +32,8 @@ class OrderBuilder:
 
 if __name__ == "__main__":
     order_builder = OrderBuilder()
-    order_builder.addBeverage(GrapeCustard())
-    order_builder.addCup("大杯")
-    order_builder.addHeat("热")
+    order_builder.setBeverage(GrapeCustard())
+    order_builder.setCup("大杯")
+    order_builder.setHeat("热")
     order_1 = order_builder.build()
     order_1.show()

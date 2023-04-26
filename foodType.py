@@ -4,6 +4,7 @@ class Beverage:
     type = ""
     heat = ''
     cup = ''
+    material = []
 
     def getPrice(self):
         return self.price
