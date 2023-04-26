@@ -1,16 +1,16 @@
-from abstract_factory import *
+from foodType import *
 
 
-class Order:
+class order:
     beverage = ""
 
     def __init__(self, orderBuilder):
         self.beverage = orderBuilder.bBeverage
 
     def show(self):
-        print("name:%s " % self.beverage.getName())
-        print("heat:%s " % self.beverage.heat)
-        print("cup:%s " % self.beverage.cup)
+        print("Beverage:%s" % self.beverage.getName())
+        print("Heat:%s " % self.beverage.getHeat())
+        print("Cup:%s " % self.beverage.getCup())
 
 
 class OrderBuilder:
@@ -26,4 +26,11 @@ class OrderBuilder:
         self.bBeverage.cup = xCup
 
     def build(self):
-        return Order(self)
+        return order(self)
+
+
+if __name__ == "__main__":
+    order_builder = OrderBuilder()
+    order_builder.addBeverage(MochaCoffee())
+    order_1 = order_builder.build()
+    order_1.show()
