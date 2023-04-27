@@ -299,3 +299,11 @@ class iceCreamDecorator(drinkDecorator):
 
     def delIngredient(self):
         return self.beverage.delIngredint() - 1
+
+if  __name__=="__main__":
+    coke_cola=coke()
+    print("Name:%s" % coke_cola.getName())
+    print("Price:%s" % coke_cola.getPrice())
+    ice_coke=iceDecorator(coke_cola)
+    print("Name:%s" % ice_coke.getName())
+    print("Price:%s" % ice_coke.getPrice())

@@ -33,6 +33,12 @@ class Beverage:
     def getCup(self):
         return self.cup
 
+    def getSugar(self):
+        return self.sugar
+
+    def setSugar(self, sugar):
+        self.sugar = sugar
+
 
 class Tea(Beverage):
     type = "TEA"
