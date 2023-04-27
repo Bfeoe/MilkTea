@@ -3,6 +3,7 @@ class Beverage:
     price: float = 0.0
     type = ""
     heat = ''
+    sugar = ''
     cup = ''
     material = []
 
@@ -250,11 +251,11 @@ class YangZhiGanLu(FruitTea):
         self.name = "杨枝甘露"
 
 
-class MultiMangoYangZhiGanLu(FruitTea):
+class GrapeMore(FruitTea):
     cup = '大杯'
-    material = ["tea", "mango", "tea"]
+    material = ["grape", "tea"]
     def __init__(self):
-        self.name = "多芒杨枝甘露"
+        self.name = "葡萄多多"
 
 
 class StrawberryCherryTea(FruitTea):

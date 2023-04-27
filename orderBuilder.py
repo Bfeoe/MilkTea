@@ -1,4 +1,4 @@
-from foodType import GrapeCustard
+from foodType import *
 
 
 class order:
@@ -24,10 +24,12 @@ class order:
 
 
 class OrderBuilder:
-    bBeverage = ""
 
+    bBeverage = ""
+    def __init__(self):
+        self.bBeverage = Beverage()
     def setBeverage(self, xBeverage):
-        self.bBeverage = xBeverage
+        self.bBeverage = eval(xBeverage+'()')
 
     def setHeat(self, xHeat):
         self.bBeverage.setHeat(xHeat)
@@ -41,11 +43,3 @@ class OrderBuilder:
     def build(self):
         return order(self)
 
-
-if __name__ == "__main__":
-    order_builder = OrderBuilder()
-    order_builder.setBeverage(GrapeCustard())
-    order_builder.setCup("大杯")
-    order_builder.setHeat("热")
-    order_1 = order_builder.build()
-    order_1.show()

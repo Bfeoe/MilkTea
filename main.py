@@ -1,20 +1,18 @@
 import tkinter
-
-from foodFactory import juiceFactory, milkTeaFactory
-from foodType import AppleJuice, OriginalMilkTea
+from foodType import *
 from munuAll import menuAll
 from orderBuilder import OrderBuilder
 
 root = tkinter.Tk()
 root.title("奶茶店菜单")
-img_gif = tkinter.PhotoImage(file='C:\\Users\\86184\\PycharmProjects\MilkTea-main\\menu.gif')
+img_gif = tkinter.PhotoImage(file='C:\\Users\\John Nash\\Desktop\\MilkTea\\menu.gif')
 label_img = tkinter.Label(root, image=img_gif)
 label_img.pack()
 root.mainloop()
 
 order_builder = OrderBuilder()
 
-dish_list = list(input().split())
+dish_list = list(input("顾客您好，请您点单！\n").split())
 
 if __name__ == "__main__":
     menu = menuAll()
@@ -22,12 +20,12 @@ if __name__ == "__main__":
     for dish in dish_list:
         if menu.isBeverage(dish):
             order_builder.setBeverage(dish)
+        elif menu.isSize(dish):
+            order_builder.setCup(dish)
         elif menu.isHeat(dish):
             order_builder.setHeat(dish)
         elif menu.isSugar(dish):
             order_builder.setSugar(dish)
-        elif menu.isSize(dish):
-            order_builder.setCup(dish)
         else:
             continue
 
