@@ -1,5 +1,38 @@
+import tkinter
+
 from foodFactory import juiceFactory, milkTeaFactory
 from foodType import AppleJuice, OriginalMilkTea
+from munuAll import menuAll
+from orderBuilder import OrderBuilder
+
+root = tkinter.Tk()
+root.title("奶茶店菜单")
+img_gif = tkinter.PhotoImage(file='C:\\Users\\86184\\PycharmProjects\MilkTea-main\\menu.gif')
+label_img = tkinter.Label(root, image=img_gif)
+label_img.pack()
+root.mainloop()
+
+order_builder = OrderBuilder()
+
+dish_list = list(input().split())
+
+if __name__ == "__main__":
+    menu = menuAll()
+    menu.loadMenu()
+    for dish in dish_list:
+        if menu.isBeverage(dish):
+            order_builder.setBeverage(dish)
+        elif menu.isHeat(dish):
+            order_builder.setHeat(dish)
+        elif menu.isSugar(dish):
+            order_builder.setSugar(dish)
+        elif menu.isSize(dish):
+            order_builder.setCup(dish)
+        else:
+            continue
+
+    order_1 = order_builder.build()
+    order_1.show()
 
 if __name__ == "__main__":
     juice_factory = juiceFactory()

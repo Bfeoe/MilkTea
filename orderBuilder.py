@@ -1,4 +1,4 @@
-from foodType import *
+from foodType import GrapeCustard
 
 
 class order:
@@ -12,6 +12,7 @@ class order:
         print("name:", self.beverage.getName())
         print("Heat: ", self.beverage.getHeat())
         print("Cup:", self.beverage.getCup())
+        print("Sugar:", self.beverage.getSugar())
 
 
 class OrderBuilder:
@@ -25,6 +26,9 @@ class OrderBuilder:
 
     def setCup(self, xCup):
         self.bBeverage.setCup(xCup)
+
+    def setSugar(self, xSugar):
+        self.bBeverage.setSugar(xSugar)
 
     def build(self):
         return order(self)
