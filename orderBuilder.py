@@ -3,9 +3,17 @@ from foodType import GrapeCustard
 
 class order:
     beverage = None
+    price = 0.0
+    order_id = 0
 
     def __init__(self, orderBuilder):
         self.beverage = orderBuilder.bBeverage
+
+    def __str__(self):
+        return f"order{self.order_id}: {self.beverage.getName()} {self.beverage.getCup()} {self.beverage.getHeat()}"
+
+    def setOrder_id(self, xOrder_id):
+        self.order_id = xOrder_id
 
     def show(self):
         print("Order:")

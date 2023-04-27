@@ -73,7 +73,7 @@ class FourSeasonsSpringTea(Tea):
 
 class JasmineGreenTea(Tea):
     material = ["green tea",
-                "jasmine tea"]
+                "jasmine"]
     def __init__(self):
         self.name = "茉莉绿茶"
 
@@ -170,7 +170,7 @@ class OriginalMilkGreen(MilkTea):
 
 
 class JasmineMilkGreen(MilkTea):
-    material = ["milk", "green tea", "jasmine tea"]
+    material = ["milk", "green tea", "jasmine"]
     def __init__(self):
         self.name = "茉莉奶绿"
 
@@ -277,7 +277,7 @@ class LemonBlackTea(FruitTea):
 
 class ABucketOfFruitTea(FruitTea):
     cup = '大杯'
-    material = ["tea", "strawberry", "cherry", "peach"]
+    material = ["tea", "strawberry", "cherry", "peach", "watermelon"]
     def __init__(self):
         self.name = "一桶水果茶"
 
