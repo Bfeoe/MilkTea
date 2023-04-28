@@ -24,7 +24,7 @@ class beverageFactory():
                    "樱桃汁": "CherryJuice", "桃子汁": "PeachJuice"
                    }
     def make(self, pname):
-        eName = self.translation.
+        eName = self.translation.get(pname)
         return eval(eName + '()')
 #
 #
