@@ -1,7 +1,7 @@
 from foodType import *
 
 
-class beverageFactory():
+class foodFactory():
     translation = {"原味奶茶": "OriginalMilkTea", "抹茶奶茶": "MatchaMilkTea", "巧克力奶茶": "ChocolateMilkTea",
                    "珍珠奶茶": "BubbleTea", "奥利奥奶茶": "OreoMilkTea",
                    "红豆奶茶": "RedBeanMilkTea", "抹茶红豆": "MatchaRedBean", "椰香奶茶": "CoconutFlavoredMilkTea",

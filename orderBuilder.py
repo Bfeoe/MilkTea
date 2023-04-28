@@ -1,5 +1,5 @@
 from foodType import *
-
+from foodFactory import *
 
 class order:
     beverage = None
@@ -29,7 +29,8 @@ class OrderBuilder:
     def __init__(self):
         self.bBeverage = Beverage()
     def setBeverage(self, xBeverage):
-        self.bBeverage = eval(xBeverage+'()')
+        beverage_factory = foodFactory()
+        self.bBeverage = beverage_factory.make(xBeverage)
 
     def setHeat(self, xHeat):
         self.bBeverage.setHeat(xHeat)

@@ -25,8 +25,7 @@ class menuAll:
 
     def isBeverage(self, dish):
         if dish in self.menu_map["beverage"]:
-            food_factory = beverageFactory()
-            return food_factory.make(dish)
+            return True
         return False
 
     def isSugar(self, dish):
